@@ -8,7 +8,7 @@ public enum Base58String {
 
 public extension String {
 
-    public init(base58Encoding bytes: Data, alphabet: [UInt8] = Base58String.btcAlphabet) {
+    init(base58Encoding bytes: Data, alphabet: [UInt8] = Base58String.btcAlphabet) {
         var x = BigUInt(bytes)
         let radix = BigUInt(alphabet.count)
 
@@ -32,14 +32,14 @@ public extension String {
 
 public extension Data {
 
-    public init?(base58Decoding string: String, alphabet: [UInt8] = Base58String.btcAlphabet) {
+    init?(base58Decoding string: String, alphabet: [UInt8] = Base58String.btcAlphabet) {
         var answer = BigUInt(0)
         var j = BigUInt(1)
         let radix = BigUInt(alphabet.count)
         let byteString = [UInt8](string.utf8)
 
         for ch in byteString.reversed() {
-            if let index = alphabet.index(of: ch) {
+            if let index = alphabet.firstIndex(of: ch) {
                 answer = answer + (j * BigUInt(index))
                 j *= radix
             } else {
