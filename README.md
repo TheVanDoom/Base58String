@@ -1,8 +1,8 @@
 # Swift Base58String
 
-Base58String is based off of go-base58 string, available [here](https://github.com/jbenet/go-base58).
+Base58String is forked from this original [repository](https://github.com/cloutiertyler/Base58String) by Tyler Cloutier.
 
-This library provides an idiomatic Swift version of the go library.
+This repository reworks some aspects of the implementation and replaces deprecated functionality where possible.
 
 ## How to Install
 
@@ -11,15 +11,7 @@ This library provides an idiomatic Swift version of the go library.
 Add the following to your Package.swift file in "dependencies".
 
 ```
-.package(url: "https://github.com/cloutiertyler/Base58String.git", from: "0.1.0")
-```
-
-### CocoaPods
-
-Add the following to your Podfile:
-
-```
-pod 'Base58String', :git => 'https://github.com/keefertaylor/Base58String.git'	
+.package(url: "https://github.com/cloutiertyler/Base58String.git", from: "1.0.0")
 ```
 
 ## Usage
